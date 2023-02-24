@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.data {
+    text-align: left;
+}
+
+.txt_card {
+    align-items: left;
+    text-align: left;
+}

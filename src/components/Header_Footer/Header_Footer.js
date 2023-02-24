@@ -8,22 +8,24 @@ import linkedin from '../../assets/linkedin.png';
 import twitter from '../../assets/twitter.png';
 
 import './Header_Footer.css'
+import Main from '../Main/Main';
 
 function Header_Footer () {
     return (
-        <div className='Header_Footer'>
+        <div className='header_footer'>
             <header className='topo'>
-                <img src={ logo }></img>
-                <button>
-                    <img src={ moon }></img>
-                </button>
+                <img src={ logo } className='img_logo'></img>
+                <img src={ moon } className='img_modo'></img>
             </header>
-            <footer>
-                <img src={ logo }></img>
+            
+            <Main />
+
+            <footer className='rodape'>
+                <img src={ logo } className='img_logo_rodape'></img>
                 <p>
                     Ajudamos a criar uma personalidade digital construindo sua marca no ambiente online utilizando estratégias, ferramentas e tecnologias personalizadas.
                 </p>
-                <div>
+                <div className='tecnologias_img'>
                     <img src={ facebook }></img>
                     <img src={ twitter }></img>
                     <img src={ linkedin }></img>
@@ -31,7 +33,7 @@ function Header_Footer () {
                     <img src={ behance }></img>
                     <img src={ google_plus }></img>
                 </div>
-                <p>Copyright 2022 © <span>Erick_GBDS</span></p>
+                <p>Copyright 2022 © <strong className='name_desenvolvedor'>Erick_GBDS</strong></p>
             </footer>
         </div>
     )

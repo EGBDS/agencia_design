@@ -5,6 +5,10 @@
     margin: 4vw;
 }
 
+.img_banner {
+    display: none;
+}
+
 .destaque_txt {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -19,4 +23,27 @@
 
 .txt_card {
     text-align: center;
+    margin: 0 10vw;
+}
+
+@media (min-width: 768px) {
+    
+    .destaque {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img_banner {
+        display: block;
+        width: 50%;
+        max-height: 65vh;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        margin: 2vw;
+        justify-content: center;
+    }
 }

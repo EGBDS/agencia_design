@@ -18,7 +18,7 @@
 .img_modo {
     max-height: 4vh;
     border-radius: 50px;
-    border: 1px solid black;
+    border: 1px solid ;
     padding: 10px;
     margin: 0 3vh;
 }
@@ -31,21 +31,35 @@
     text-align: center;
 }
 
+.rodape > p {
+    margin:  0 20vw;
+}
+
 .img_logo_rodape {
     width: auto;
     max-height: 9vh;
+    margin: 4vh;
 }
 
 .tecnologias_img {
     display: flex;
     flex-direction: row;
+    margin: 0 20vw ;
 }
 
 .tecnologias_img > img {
-    max-width: 10vw;
-    margin: 4vw 4vw 8vw 4vw;
+    max-width: 6vw;
+    margin: 4vw 1vw 8vw 1vw;
 }
 
-.name_desenvolvedor {
+.copyright {
+    width: 100vw;
+    border-top: 1px solid rgb(41, 41, 41);
+    margin: 0;
+    padding: 1vw;
+}
+
+a{
+    text-decoration: none;
     color: rgb(231, 199, 13);
 }

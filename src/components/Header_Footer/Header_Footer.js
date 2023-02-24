@@ -1,5 +1,6 @@
 import logo from '../../assets/logo.png';
 import moon from '../../assets/moon.png';
+import sun from '../../assets/sun.png';
 import behance from '../../assets/behance.png';
 import dribble from '../../assets/dribble.png';
 import facebook from '../../assets/facebook.png';
@@ -10,17 +11,48 @@ import twitter from '../../assets/twitter.png';
 import './Header_Footer.css'
 import Main from '../Main/Main';
 
+import { useState } from 'react';
+
 function Header_Footer () {
+
+    const [ Modo, setModo ] = useState( moon );
+    const [ TextColor, setTextColor ] = useState( "rgb(56, 56, 56)" );
+    const [ Borda, setBorda ] = useState( " 1px solid black" );
+    const [ BackgroundColor, setBackgroundColor ] = useState("white")
+
+    function Mudar() {
+        
+    
+        if ( Modo === moon ){
+            setModo( sun );
+            setTextColor( "white" );
+            setBorda(" 1px solid white");
+            setBackgroundColor("rgb(56, 56, 56)");
+        } else {
+            setModo( moon )
+            setTextColor( "black" )
+            setBorda(" 1px solid black")
+            setBackgroundColor("white");
+        }
+    }
+    
+
+
     return (
-        <div className='header_footer'>
-            <header className='topo'>
+        <div className='header_footer' >
+            <header className='topo' style={{background: BackgroundColor}}>
                 <img src={ logo } className='img_logo'></img>
-                <img src={ moon } className='img_modo'></img>
+                <img 
+                    src={ Modo } 
+                    onClick={ Mudar } 
+                    className='img_modo'
+                    style={{border: Borda}}>
+                </img>
             </header>
             
             <Main />
 
-            <footer className='rodape'>
+            <footer className='rodape' style={{color: TextColor, background: BackgroundColor}}>
                 <img src={ logo } className='img_logo_rodape'></img>
                 <p>
                     Ajudamos a criar uma personalidade digital construindo sua marca no ambiente online utilizando estratégias, ferramentas e tecnologias personalizadas.
@@ -33,7 +65,12 @@ function Header_Footer () {
                     <img src={ behance }></img>
                     <img src={ google_plus }></img>
                 </div>
-                <p>Copyright 2022 © <strong className='name_desenvolvedor'>Erick_GBDS</strong></p>
+                <p className='copyright'>
+                    Copyright 2022 © 
+                    <a href="https://github.com/EGBDS" target='_blank'>
+                        Erick_GBDS
+                    </a>
+                </p>
             </footer>
         </div>
     )

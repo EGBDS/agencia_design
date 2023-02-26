@@ -18,7 +18,8 @@ function Header_Footer () {
     const [ Modo, setModo ] = useState( moon );
     const [ TextColor, setTextColor ] = useState( "rgb(56, 56, 56)" );
     const [ Borda, setBorda ] = useState( " 1px solid black" );
-    const [ BackgroundColor, setBackgroundColor ] = useState("white")
+    const [ BackgroundColor, setBackgroundColor ] = useState("white");
+    const [ BackgroundColor_Cards, setBackgroundColor_Cards ] = useState("white")
 
     function Mudar() {
         
@@ -28,11 +29,13 @@ function Header_Footer () {
             setTextColor( "white" );
             setBorda(" 1px solid white");
             setBackgroundColor("rgb(56, 56, 56)");
+            setBackgroundColor_Cards("gray")
         } else {
-            setModo( moon )
-            setTextColor( "black" )
-            setBorda(" 1px solid black")
+            setModo( moon );
+            setTextColor( "black" );
+            setBorda(" 1px solid black");
             setBackgroundColor("white");
+            setBackgroundColor_Cards("white")
         }
     }
     
@@ -50,7 +53,11 @@ function Header_Footer () {
                 </img>
             </header>
             
-            <Main />
+            <Main 
+                BackgroundColor={BackgroundColor}
+                BackgroundColor_Cards={BackgroundColor_Cards}
+                color={TextColor}
+            />
 
             <footer className='rodape' style={{color: TextColor, background: BackgroundColor}}>
                 <img src={ logo } className='img_logo_rodape'></img>
@@ -66,7 +73,7 @@ function Header_Footer () {
                     <img src={ google_plus }></img>
                 </div>
                 <p className='copyright'>
-                    Copyright 2022 © 
+                    Copyright 2023 © 
                     <a href="https://github.com/EGBDS" target='_blank'>
                         Erick_GBDS
                     </a>
